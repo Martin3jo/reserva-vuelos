@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reserva de Vuelo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Reserva de Vuelo</h2>
+        <form id="reservaForm">
+            <!-- Datos del Pasajero -->
+            <fieldset>
+                <legend>Datos del Pasajero</legend>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" pattern="[A-Za-z\s]{3,}" required title="Solo letras y espacios, mínimo 3 caracteres">
+                </div>
+
+                <div class="form-group">
+                    <label for="pasaporte">Número de pasaporte o identificación:</label>
+                    <input type="text" id="pasaporte" name="pasaporte" pattern="[A-Za-z0-9]{7,10}" required title="Alfa-numérico, entre 7 y 10 caracteres">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad:</label>
+                    <select id="nacionalidad" name="nacionalidad" required>
+                        <option value="">Seleccione su país</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="chile">Chile</option>
+                        <!-- Agregar más opciones según corresponda -->
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Datos del Vuelo -->
+            <fieldset>
+                <legend>Datos del Vuelo</legend>
+
+                <div class="form-group">
+                    <label for="ciudadOrigen">Ciudad de origen:</label>
+                    <select id="ciudadOrigen" name="ciudadOrigen" required>
+                        <option value="">Seleccione la ciudad de origen</option>
+                        <option value="buenosAires">Buenos Aires</option>
+                        <option value="mendoza">Mendoza</option>
+                        <option value="cordoba">Córdoba</option>
+                        <!-- Agregar más aeropuertos válidos -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudadDestino">Ciudad de destino:</label>
+                    <select id="ciudadDestino" name="ciudadDestino" required>
+                        <option value="">Seleccione la ciudad de destino</option>
+                        <option value="buenosAires">Buenos Aires</option>
+                        <option value="mendoza">Mendoza</option>
+                        <option value="cordoba">Córdoba</option>
+                        <!-- Agregar más aeropuertos válidos -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaSalida">Fecha de salida:</label>
+                    <input type="date" id="fechaSalida" name="fechaSalida" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaRegreso">Fecha de regreso (si aplica):</label>
+                    <input type="date" id="fechaRegreso" name="fechaRegreso">
+                </div>
+
+                <div class="form-group">
+                    <label for="clase">Clase de vuelo:</label>
+                    <select id="clase" name="clase" required>
+                        <option value="economica">Económica</option>
+                        <option value="ejecutiva">Ejecutiva</option>
+                        <option value="primeraClase">Primera Clase</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numBoletos">Número de boletos:</label>
+                    <input type="number" id="numBoletos" name="numBoletos" min="1" max="10" required>
+                </div>
+            </fieldset>
+
+            <!-- Datos de Pago -->
+            <fieldset>
+                <legend>Datos de Pago</legend>
+
+                <div class="form-group">
+                    <label for="tarjetaCredito">Número de tarjeta de crédito:</label>
+                    <input type="text" id="tarjetaCredito" name="tarjetaCredito" pattern="\d{16}" required title="Debe tener 16 dígitos">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaVencimiento">Fecha de vencimiento (MM/AA):</label>
+                    <input type="text" id="fechaVencimiento" name="fechaVencimiento" pattern="(0[1-9]|1[0-2])\/\d{2}" required title="Formato MM/AA">
+                </div>
+
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" pattern="\d{3,4}" required title="Debe tener 3 o 4 dígitos">
+                </div>
+
+                <div class="form-group">
+                    <label for="nombreTarjeta">Nombre en la tarjeta:</label>
+                    <input type="text" id="nombreTarjeta" name="nombreTarjeta" pattern="[A-Za-z\s]+" required title="Solo letras y espacios">
+                </div>
+            </fieldset>
+
+            <button type="submit">Enviar Reserva</button>
+        </form>
+    </div>
+</body>
+</html>
